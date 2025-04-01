@@ -1,0 +1,21 @@
+/* Target the Swiper navigation buttons */
+.swiper-button-next,
+.swiper-button-prev {
+    background-color: #6b46c1;
+    /* same as bg-purple-700 */
+    color: white;
+    /* Ensure the icon is visible */
+    border-radius: 50%;
+    /* Optional: make the buttons round */
+    padding: 10px;
+    /* Optional: adjust the size of the buttons */
+}
+
+/* Optional: Add hover effect to the buttons */
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background-color: #553c9a;
+    /* same as hover:bg-purple-600 */
+    transform: scale(1.05);
+    /* Optional: match hover effect */
+}

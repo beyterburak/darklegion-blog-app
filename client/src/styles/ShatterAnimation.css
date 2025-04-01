@@ -1,0 +1,110 @@
+.shatter-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.shard {
+    position: absolute;
+    width: 33.33%;
+    /* 3x3 parçalar için */
+    height: 33.33%;
+    background-size: 300px 300px;
+    transition: transform 1s ease-in-out;
+}
+
+/* Her parçaya özel konumlandırma */
+.shard-0 {
+    top: 0;
+    left: 0;
+    background-position: 0 0;
+}
+
+.shard-1 {
+    top: 0;
+    left: 33.33%;
+    background-position: -100px 0;
+}
+
+.shard-2 {
+    top: 0;
+    left: 66.66%;
+    background-position: -200px 0;
+}
+
+.shard-3 {
+    top: 33.33%;
+    left: 0;
+    background-position: 0 -100px;
+}
+
+.shard-4 {
+    top: 33.33%;
+    left: 33.33%;
+    background-position: -100px -100px;
+}
+
+.shard-5 {
+    top: 33.33%;
+    left: 66.66%;
+    background-position: -200px -100px;
+}
+
+.shard-6 {
+    top: 66.66%;
+    left: 0;
+    background-position: 0 -200px;
+}
+
+.shard-7 {
+    top: 66.66%;
+    left: 33.33%;
+    background-position: -100px -200px;
+}
+
+.shard-8 {
+    top: 66.66%;
+    left: 66.66%;
+    background-position: -200px -200px;
+}
+
+/* Parçalanma efekti */
+.shattered.shard-0 {
+    transform: translate(-50px, -50px) rotate(-20deg);
+}
+
+.shattered.shard-1 {
+    transform: translate(0px, -70px) rotate(15deg);
+}
+
+.shattered.shard-2 {
+    transform: translate(50px, -50px) rotate(25deg);
+}
+
+.shattered.shard-3 {
+    transform: translate(-70px, 0px) rotate(-15deg);
+}
+
+.shattered.shard-4 {
+    transform: translate(0px, 0px) rotate(5deg);
+}
+
+.shattered.shard-5 {
+    transform: translate(70px, 0px) rotate(-10deg);
+}
+
+.shattered.shard-6 {
+    transform: translate(-50px, 50px) rotate(10deg);
+}
+
+.shattered.shard-7 {
+    transform: translate(0px, 70px) rotate(-15deg);
+}
+
+.shattered.shard-8 {
+    transform: translate(50px, 50px) rotate(20deg);
+}
