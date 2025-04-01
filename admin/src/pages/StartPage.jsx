@@ -95,10 +95,17 @@ const StartPage = () => {
             >
               Get Started
             </Button>
-            <Link to='#' className='flex gap-2 items-center font-semibold'>
+            <Link
+              to='#'
+              className={clsx(
+                "flex gap-2 items-center font-semibold transition-colors duration-300",
+                theme ? "text-gray-300 hover:text-white" : "text-slate-700 hover:text-black"
+              )}
+            >
               Contact
               <MdArrowForward />
             </Link>
+
           </div>
         </div>
       </div>
