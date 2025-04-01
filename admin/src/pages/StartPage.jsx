@@ -90,9 +90,8 @@ const StartPage = () => {
           <div className='flex gap-6 items-center mt-6'>
             <Button
               onClick={open}
-              className={`${
-                theme ? "bg-purple-950" : "bg-black"
-              } text-gray-300 rounded h-10 text-sm `}
+              className={`${theme ? "bg-purple-950" : "bg-black"
+                } text-gray-300 rounded h-10 text-sm `}
             >
               Get Started
             </Button>
@@ -106,9 +105,22 @@ const StartPage = () => {
 
       <Modal
         opened={opened || signInModal}
-        onClose={formClose ? () => {} : handleCloseModal}
-        title='User Authentication'
+        onClose={formClose ? () => { } : handleCloseModal}
+        title="User Authentication"
         centered
+        styles={{
+          title: { color: theme ? "#F3F4F6" : "#1F2937" },
+          modal: {
+            backgroundColor: theme ? "#1F2937" : "#FFFFFF",
+            color: theme ? "#F3F4F6" : "#1F2937",
+            borderRadius: "8px",
+            padding: "16px",
+            border: `1px solid ${theme ? "#374151" : "#E5E7EB"}`,
+          },
+          close: {
+            color: theme ? "#F3F4F6" : "#1F2937",
+          },
+        }}
       >
         {isSignin ? (
           <LoginForm

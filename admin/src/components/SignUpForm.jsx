@@ -55,29 +55,54 @@ const SignUpForm = ({ toast, isSignin, setIsSignin, toggle, setFormClose }) => {
       onSubmit={form.onSubmit(handleSubmit)}
       className='flex flex-col gap-3'
     >
-      <div className='w-full flex gap-2 '>
+      <div className="w-full flex gap-2">
         <TextInput
-          className='w-full'
+          className="w-full"
           withAsterisk
-          label='First Name'
-          placeholder='First Name'
+          label="First Name"
+          placeholder="First Name"
+          styles={{
+            label: { color: theme ? "#E5E7EB" : "#1F2937" }, // Etiket rengi
+            input: {
+              backgroundColor: theme ? "#1F2937" : "#FFFFFF", // Input arkaplanı
+              color: theme ? "#F3F4F6" : "#1F2937", // Input text rengi
+              borderColor: theme ? "#374151" : "#E5E7EB",
+            },
+          }}
           {...form.getInputProps("firstName")}
         />
         <TextInput
-          className='w-full'
+          className="w-full"
           withAsterisk
-          label='Last Name'
-          placeholder='Last Name'
+          label="Last Name"
+          placeholder="Last Name"
+          styles={{
+            label: { color: theme ? "#E5E7EB" : "#1F2937" },
+            input: {
+              backgroundColor: theme ? "#1F2937" : "#FFFFFF",
+              color: theme ? "#F3F4F6" : "#1F2937",
+              borderColor: theme ? "#374151" : "#E5E7EB",
+            },
+          }}
           {...form.getInputProps("lastName")}
         />
       </div>
 
       <TextInput
         withAsterisk
-        label='Email Address'
-        placeholder='your@email.com'
+        label="Email Address"
+        placeholder="your@email.com"
+        styles={{
+          label: { color: theme ? "#E5E7EB" : "#1F2937" },
+          input: {
+            backgroundColor: theme ? "#1F2937" : "#FFFFFF",
+            color: theme ? "#F3F4F6" : "#1F2937",
+            borderColor: theme ? "#374151" : "#E5E7EB",
+          },
+        }}
         {...form.getInputProps("email")}
       />
+
 
       <PasswordStrength
         value={passValue}
@@ -115,10 +140,13 @@ const SignUpForm = ({ toast, isSignin, setIsSignin, toggle, setFormClose }) => {
           Submit
         </Button>
       </Group>
-      <p className='text-sm'>
-        {isSignin ? "Don't have an account?" : "Already has an account?"}
+      <p className="text-sm text-gray-900 dark:text-gray-200">
+        {isSignin ? "Don't have an account?" : "Already have an account?"}
         <span
-          className={clsx("underline cursor-pointer ml-1", theme ? "text-purple-700" : "text-black")}
+          className={clsx(
+            "underline cursor-pointer ml-1",
+            theme ? "text-purple-400" : "text-black"
+          )}
           onClick={() => setIsSignin((prev) => !prev)}
         >
           {isSignin ? "Sign up" : "Sign in"}

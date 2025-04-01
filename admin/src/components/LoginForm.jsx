@@ -53,9 +53,13 @@ const LoginForm = ({ toast, isSignin, setIsSignin, toggle, setFormClose }) => {
     >
       <TextInput
         withAsterisk
-        label='Email Address'
-        placeholder='your@email.com'
+        label="Email Address"
+        placeholder="your@email.com"
         {...form.getInputProps("email")}
+        className={clsx(
+          "w-full rounded-md",
+          theme ? "text-gray-200 border-gray-500" : "bg-white text-black border-gray-300"
+        )}
       />
 
       <PasswordStrength
@@ -79,10 +83,13 @@ const LoginForm = ({ toast, isSignin, setIsSignin, toggle, setFormClose }) => {
           Submit
         </Button>
       </Group>
-      <p className='text-sm'>
-        {isSignin ? "Don't have an account?" : "Already has an account?"}
+      <p className="text-sm text-gray-900 dark:text-gray-200">
+        {isSignin ? "Don't have an account?" : "Already have an account?"}
         <span
-          className={clsx("underline cursor-pointer ml-1", theme ? "text-purple-700" : "text-black")}
+          className={clsx(
+            "underline cursor-pointer ml-1",
+            theme ? "text-purple-400" : "text-black"
+          )}
           onClick={() => setIsSignin((prev) => !prev)}
         >
           {isSignin ? "Sign up" : "Sign in"}

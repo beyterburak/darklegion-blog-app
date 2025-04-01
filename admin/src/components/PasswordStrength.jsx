@@ -63,8 +63,8 @@ export function PasswordStrength({ value, setValue, setStrength, isSignin }) {
           value.length > 0 && index === 0
             ? 100
             : strength >= ((index + 1) / 4) * 100
-            ? 100
-            : 0
+              ? 100
+              : 0
         }
         color={strength > 80 ? "teal" : strength > 50 ? "yellow" : "red"}
         key={index}
@@ -80,7 +80,13 @@ export function PasswordStrength({ value, setValue, setStrength, isSignin }) {
         placeholder='Your password'
         label='Password'
         required
+        classNames={{
+          label: "text-gray-900 dark:text-gray-200",
+          input:
+            "bg-white dark:bg-gray-900 text-black dark:text-gray-200 border-gray-300 dark:border-gray-700",
+        }}
       />
+
 
       {!isSignin && (
         <>
